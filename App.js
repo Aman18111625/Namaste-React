@@ -8,6 +8,5 @@ const parent = React.createElement("div", {id: "parent"},[
         React.createElement("h2", {}, "I'm a h2 tag")
     ])
 ])
-console.log(parent);
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(parent);//render function always replace whatever inside our root , not append
