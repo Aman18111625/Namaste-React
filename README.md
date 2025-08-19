@@ -26,6 +26,5 @@ Note: 1 file/module can have only 1 default but can have multiple named export. 
 (Normal Inbuilt JS functions)
 useState() --> to update state dynamically (ex. counter, filter etc)
 useEffect() --> re-rende
-
 ring of components after effect
 
