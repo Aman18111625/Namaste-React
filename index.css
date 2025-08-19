@@ -2,11 +2,13 @@
     display: flex;
     justify-content: space-between;
     border: 0.0625rem solid black; /* 1px */
+    width: 90%;
+    margin-left: 2%;
 }
 
 .logo {
-    width: 6.25rem;   /* 100px */
-    height: 6.25rem;  /* 100px */
+    width: 6.25rem;  /* 100px */
+    height: 6.25rem; /* 100px */
 }
 
 .nav-container {
@@ -35,17 +37,19 @@
 
 .search-container {
     display: flex;
-    margin: 1.25rem 3.5625rem; /* 20px 57px */
+    margin: 1.25rem 0.5625rem; /* 20px 9px */
 }
 
 .search-input {
-   width: 30%;
+    width: 30%;
 }
 
 .search-button {
     background-color: #f0f0f0;
-    padding: 0.5rem 0.75rem; /* 8px 12px */
+    padding: 0.625rem; /* 10px */
     cursor: pointer;
+    display: flex;
+    margin-left: 0.625rem; /* 10px */
 }
 
 .filter-button {
@@ -53,23 +57,23 @@
     padding: 0.625rem; /* 10px */
     cursor: pointer;
     display: flex;
-    margin-left: 10px;
+    margin-left: 0.625rem; /* 10px */
 }
 
 .restaurant-card {
     margin: 0.625rem; /* 10px */
-    background-color:  #f0f0f0;
-    width: 12.5rem;
-    height: 22rem;
+    background-color: #f0f0f0;
+    width: 12.5rem;  /* 200px */
+    height: 22rem;   /* 352px */
 }
 
 .restaurant-card:hover {
-   border: 0.0625rem solid black; /* 1px */
-   background-color: white;
+    border: 0.0625rem solid black; /* 1px */
+    background-color: white;
 }
 
 .restaurant-image {
-    width: 12.5rem;   /* 200px */
+    width: 12.5rem;  /* 200px */
     height: 9.375rem; /* 150px */
 }
 
@@ -80,12 +84,19 @@
 .shimmer-container {
     display: flex;
     flex-wrap: wrap;
-    padding: 0rem 3rem;
+    padding: 0rem 3rem; /* 48px */
 }
 
 .shimmer-card {
-    margin: 20px;
-    width: 200px;
-    height: 400px;
+    margin: 1.25rem; /* 20px */
+    width: 12.5rem;  /* 200px */
+    height: 25rem;   /* 400px */
     background-color: #f0f0f0;
+}
+
+.no-results {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+    margin: 1.25rem 0; /* 20px */
 }
