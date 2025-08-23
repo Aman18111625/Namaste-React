@@ -10,17 +10,15 @@ const Body = () => {
 
   const onClickFilter = () => {
     const filteredRes = restData.filter(
-      (restaurant) => restaurant?.info?.avgRating > 4.3
+      (restaurant) => restaurant?.info?.avgRating > 4.2
     );
     setFilteredData(filteredRes);
   };
 
   const onClickSearch = () => {
-    console.log("searching for:", searchTerm);
     const filteredRes = restData.filter((restaurant) =>
       restaurant?.info?.name?.toLowerCase()?.includes(searchTerm?.toLowerCase())
     );
-    console.log("search results:", filteredRes);
     setFilteredData(filteredRes);
   };
 
@@ -30,7 +28,7 @@ const Body = () => {
 
   const fetchData = async () => {
     const swiggyAPI = fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9352403&lng=77.624532&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+      "https://swiggy-api-4c740.web.app/swiggy-api.json"
     );
     const response = await swiggyAPI;
     const data = await response.json();
@@ -71,11 +69,7 @@ const Body = () => {
           {filteredData?.map((restaurant) => (
             <RestaurantCard
               key={restaurant?.info?.id}
-              resName={restaurant?.info?.name}
-              cuisine={restaurant?.info?.cuisines.join(", ")}
-              ratings={restaurant?.info?.avgRating}
-              deliveryTime={restaurant?.info?.sla?.deliveryTime}
-              cloudinaryImageId={restaurant?.info?.cloudinaryImageId}
+              resData={restaurant?.info}
             />
           ))}
         </div>
