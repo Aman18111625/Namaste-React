@@ -8,6 +8,8 @@ const Body = () => {
   const [filteredData, setFilteredData] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 
+  const [searchText, setSearchText] = useState("");
+
   const onClickFilter = () => {
     const filteredRes = restData.filter(
       (restaurant) => restaurant?.info?.avgRating > 4.2
