@@ -6,6 +6,7 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Cart from "./components/Cart";
 import ErrorHandler from "./components/ErrorHanlder";
+import RestaurantMenu from "./components/RestaurantMenu";
 
 const AppLayout = () => {
   return (
@@ -36,6 +37,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/cart",
         element: <Cart />
+      }, 
+      {
+        path: "/restaurant/:id",
+        element: <RestaurantMenu />
       }
     ],
     errorElement: <ErrorHandler />
