@@ -1,12 +1,20 @@
+import { lazy,Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router";
-import Header from "./components/Header";
-import Body from "./components/Body";
-import About from "./components/About";
-import Contact from "./components/Contact";
-import Cart from "./components/Cart";
+// import Header from "./components/Header";
+// import Body from "./components/Body";
+// import About from "./components/About";
+// import Contact from "./components/Contact";
+// import Cart from "./components/Cart";
+// import RestaurantMenu from "./components/RestaurantMenu";
 import ErrorHandler from "./components/ErrorHanlder";
-import RestaurantMenu from "./components/RestaurantMenu";
+
+const Header = lazy(() => import("./components/Header")); // here this import is different from above one, it's a callback function
+const Body = lazy(() => import("./components/Body"));
+const About = lazy(() => import("./components/About"));
+const Contact = lazy(() => import("./components/Contact"));
+const Cart = lazy(() => import("./components/Cart"));
+const RestaurantMenu = lazy(() => import("./components/RestaurantMenu"));
 
 const AppLayout = () => {
   return (
@@ -24,23 +32,23 @@ const appRouter = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Body />
+        element: <Suspense fallback={<h1>Loading...</h1>}><Body /></Suspense>
       },
       {
         path: "/about",
-        element: <About />
+        element: <Suspense fallback={<h1>Loading...</h1>}><About /></Suspense>
       },
       {
         path: "/contact",
-        element: <Contact />
+        element: <Suspense fallback={<h1>Loading...</h1>}><Contact /></Suspense>
       },
       {
         path: "/cart",
-        element: <Cart />
-      }, 
+        element: <Suspense fallback={<h1>Loading...</h1>}><Cart /></Suspense>
+      },
       {
         path: "/restaurant/:id",
-        element: <RestaurantMenu />
+        element: <Suspense fallback={<h1>Loading...</h1>}><RestaurantMenu /></Suspense>
       }
     ],
     errorElement: <ErrorHandler />
