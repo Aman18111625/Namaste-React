@@ -4,18 +4,18 @@ const RestaurantCard = (props) => {
   // Destructuring props
   const { name, cloudinaryImageId, costForTwo, cuisines, avgRating, sla } = props.resData || {};
   return (
-    <div className="restaurant-card">
+    <div className="m-4 p-4 w-[250px] h-[500px] rounded-lg bg-gray-100 hover:bg-gray-200">
       <img
         src={`${CLOUDINARY_IMAGE_URL}${cloudinaryImageId}`}
         alt="Restaurant"
-        className="restaurant-image"
+        className="rounded-lg"
       />
-      <div className="restaurant-info">
-        <h5>{name}</h5>
-        <h5>{cuisines?.join(", ")}</h5>
-        <h5>{costForTwo}</h5>
-        <h5>{avgRating}</h5>
-        <h5>{sla?.deliveryTime}</h5>
+      <div>
+        <p className="font-bold py-4 text-xl">{name}</p>
+        <p>{cuisines?.join(", ")}</p>
+        <p>{costForTwo}</p>
+        <p>{avgRating}⭐/5</p>
+        <p>{sla?.deliveryTime} Minutes</p>
       </div>
     </div>
   );

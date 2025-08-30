@@ -1,13 +1,8 @@
 import { lazy,Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router";
-// import Header from "./components/Header";
-// import Body from "./components/Body";
-// import About from "./components/About";
-// import Contact from "./components/Contact";
-// import Cart from "./components/Cart";
-// import RestaurantMenu from "./components/RestaurantMenu";
 import ErrorHandler from "./components/ErrorHanlder";
+import Footer from "./components/Footer";
 
 const Header = lazy(() => import("./components/Header")); // here this import is different from above one, it's a callback function
 const Body = lazy(() => import("./components/Body"));
@@ -21,6 +16,7 @@ const AppLayout = () => {
     <div className="app-layout">
       <Header />
       <Outlet />
+      <Footer />
     </div>
   );
 };

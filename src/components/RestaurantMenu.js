@@ -15,7 +15,7 @@ const RestaurantMenu = () => {
       menuData?.length === 0 ? (
         <Shimmer />
       ) : (
-        <div>
+        <div className="m-4 text-center">
           <h1>{name}</h1>
           <h3>{cuisines?.join(", ")}</h3>
           <p>{costForTwoMessage}-{deliveryTime} mins</p>
