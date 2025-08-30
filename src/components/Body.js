@@ -45,30 +45,30 @@ const Body = () => {
   return restData?.length === 0 ? (
     <Shimmer />
   ) : (
-    <div className="body-container">
+    <div className="m-4">
       <div className="filter-container">
-        <div className="search-container">
+        <div className="search m-4">
           <input
             type="text"
             placeholder="Search for restaurants..."
-            className="search-input"
+            className="border border-gray-400 p-2 rounded w-1/2"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
-          <button className="search-button" onClick={() => onClickSearch()}>
+          <button className="text-blue-300 p-2 border border-blue-300 rounded hover:bg-blue-300 hover:text-white cursor-pointer mx-2" onClick={() => onClickSearch()}>
             Search
           </button>
-          <button className="filter-button" onClick={() => onClickFilter()}>
+          <button className="text-blue-300 p-2 border border-blue-300 rounded hover:bg-blue-300 hover:text-white cursor-pointer mx-2" onClick={() => onClickFilter()}>
             Top Rated Restaurant
           </button>
         </div>
       </div>
       {filteredData?.length === 0 ? (
-        <div className="no-results">
+        <div className="flex justify-center items-center flex-col">
           <img src={NO_RESULT_IMAGE_URL} alt="No results found" />
         </div>
       ) : (
-        <div className="restaurant-container">
+        <div className="flex flex-wrap">
           {filteredData?.map((restaurant) => (
             <Link
               to={`/restaurant/${restaurant?.info?.id}`}
