@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurentCard";
+import RestaurantCard, {RestaurantCardWithPromotedLabel} from "./RestaurentCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { NO_RESULT_IMAGE_URL } from "../utils.js/constant";
@@ -8,8 +8,6 @@ const Body = () => {
   const [restData, setRestData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
-
-  const [searchText, setSearchText] = useState("");
 
   const onClickFilter = () => {
     const filteredRes = restData.filter(
@@ -35,12 +33,15 @@ const Body = () => {
     );
     const response = await swiggyAPI;
     const data = await response.json();
+    console.log('data-->', data);
     const restaurants =
-      data?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+      data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants || [];
     setRestData(restaurants);
     setFilteredData(restaurants);
   };
+
+  const PromotedRestaurantCard = RestaurantCardWithPromotedLabel(RestaurantCard);
 
   return restData?.length === 0 ? (
     <Shimmer />
@@ -63,22 +64,27 @@ const Body = () => {
           </button>
         </div>
       </div>
-      {filteredData?.length === 0 ? (
-        <div className="flex justify-center items-center flex-col">
-          <img src={NO_RESULT_IMAGE_URL} alt="No results found" />
-        </div>
-      ) : (
-        <div className="flex flex-wrap">
-          {filteredData?.map((restaurant) => (
-            <Link
-              to={`/restaurant/${restaurant?.info?.id}`}
-              key={restaurant?.info?.id}
-            >
-              <RestaurantCard resData={restaurant?.info} />
-            </Link>
-          ))}
-        </div>
-      )}
+     {filteredData?.length === 0 ? (
+  <div className="flex justify-center items-center flex-col">
+    <img src={NO_RESULT_IMAGE_URL} alt="No results found" />
+  </div>
+) : (
+  <div className="flex flex-wrap">
+    {filteredData?.map((restaurant) => (
+      <Link
+        to={`/restaurant/${restaurant?.info?.id}`}
+        key={restaurant?.info?.id}
+      >
+        {restaurant?.info?.veg ? (
+          <PromotedRestaurantCard resData={restaurant?.info} />
+        ) : (
+          <RestaurantCard resData={restaurant?.info} />
+        )}
+      </Link>
+    ))}
+  </div>
+)}
+
     </div>
   );
 };
