@@ -2,9 +2,12 @@ import { useParams } from "react-router";
 import Shimmer from "./Shimmer";
 import useRestaurantMenu from "../customHooks/useRestaurantMenu";
 import RestaurantCategories from "./RestaurantCategories";
+import { useState } from "react";
 
 const RestaurantMenu = () => {
   const { id } = useParams();
+  const [showIndex, setShowIndex] = useState(-1);
+
   const menuData = useRestaurantMenu(id);
   const { name, cuisines, costForTwoMessage, avgRating, sla } =
     menuData?.[2]?.card?.card?.info || {};
@@ -29,10 +32,12 @@ const RestaurantMenu = () => {
       <p className="text-gray-600">Average Rating: {avgRating} ⭐</p>
       <h2 className="font-bold text-xl m-4">Menu</h2>
       <div>
-        {categories.map((category) => (
+        {categories.map((category, i) => (
           <RestaurantCategories
             key={category?.card?.card?.categoryId}
             category={category?.card?.card}
+            showItems={i === showIndex}
+            setShowItems={() => setShowIndex(i)}
           />
         ))}
       </div>
