@@ -1,4 +1,4 @@
-import { lazy,Suspense } from "react";
+import { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router";
 import ErrorHandler from "./components/ErrorHanlder";
@@ -28,26 +28,46 @@ const appRouter = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Suspense fallback={<h1>Loading...</h1>}><Body /></Suspense>
+        element: (
+          <Suspense fallback={<h1>Loading...</h1>}>
+            <Body />
+          </Suspense>
+        ),
       },
       {
         path: "/about",
-        element: <Suspense fallback={<h1>Loading...</h1>}><About /></Suspense>
+        element: (
+          <Suspense fallback={<h1>Loading...</h1>}>
+            <About />
+          </Suspense>
+        ),
       },
       {
         path: "/contact",
-        element: <Suspense fallback={<h1>Loading...</h1>}><Contact /></Suspense>
+        element: (
+          <Suspense fallback={<h1>Loading...</h1>}>
+            <Contact />
+          </Suspense>
+        ),
       },
       {
         path: "/cart",
-        element: <Suspense fallback={<h1>Loading...</h1>}><Cart /></Suspense>
+        element: (
+          <Suspense fallback={<h1>Loading...</h1>}>
+            <Cart />
+          </Suspense>
+        ),
       },
       {
         path: "/restaurant/:id",
-        element: <Suspense fallback={<h1>Loading...</h1>}><RestaurantMenu /></Suspense>
-      }
+        element: (
+          <Suspense fallback={<h1>Loading...</h1>}>
+            <RestaurantMenu />
+          </Suspense>
+        ),
+      },
     ],
-    errorElement: <ErrorHandler />
+    errorElement: <ErrorHandler />,
   },
 ]);
 

@@ -1,10 +1,10 @@
-import {useState, useEffect} from "react";
-import { FETCH_MENU_URL } from "../utils.js/constant";
+import { useState, useEffect } from "react";
+import { FETCH_MENU_URL } from "../utils/constant";
 
 const useRestaurantMenu = (restaurantId) => {
   const [menuData, setMenuData] = useState([]);
 
-    useEffect(() => {
+  useEffect(() => {
     const fetchResMenuData = async () => {
       const response = await fetch(`${FETCH_MENU_URL}${restaurantId}`);
       const data = await response.json();
