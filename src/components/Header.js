@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { LOGO_URL } from "../utils.js/constant";
-import {Link} from 'react-router';
+import { LOGO_URL } from "../utils/constant";
+import { Link } from "react-router";
 
 const Header = () => {
   const [btnName, setBtnName] = useState("Login");
@@ -27,7 +27,10 @@ const Header = () => {
             <Link to="/cart">Cart</Link>
           </li>
         </ul>
-        <button className=" text-blue-300 p-2 border border-blue-300 rounded hover:bg-blue-300 hover:text-white cursor-pointer" onClick={onClickBtn}>
+        <button
+          className=" text-blue-300 p-2 border border-blue-300 rounded hover:bg-blue-300 hover:text-white cursor-pointer"
+          onClick={onClickBtn}
+        >
           {btnName}
         </button>
       </div>
