@@ -1,5 +1,15 @@
 import { CLOUDINARY_IMAGE_URL } from "../utils/constant";
+import { addItem } from "../utils/cartSlice";
+import { useDispatch } from "react-redux";
+
 const ItemList = ({ items }) => {
+  const dispatch = useDispatch();
+
+  const handleAddItem = (item) => {
+    console.log('***item', item);
+    dispatch(addItem(item));
+  };
+
   return (
     <div className="flex flex-col">
       {items?.map((item) => (
@@ -19,7 +29,10 @@ const ItemList = ({ items }) => {
           {item?.card?.info?.imageId && (
             <div className="w-3/12 p-4">
               <div className="absolute">
-                <button className="bg-black border border-gray-400 px-2 py-1 rounded-lg text-white">
+                <button
+                  className="bg-black border border-gray-400 px-2 py-1 rounded-lg text-white"
+                  onClick={() => handleAddItem(item)}
+                >
                   Add +
                 </button>
               </div>
