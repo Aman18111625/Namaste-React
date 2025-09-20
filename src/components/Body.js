@@ -4,7 +4,7 @@ import RestaurantCard, {
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { NO_RESULT_IMAGE_URL } from "../utils/constant";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 
 const Body = () => {
   const [restData, setRestData] = useState([]);
