@@ -1,12 +1,17 @@
 import { useState } from "react";
 import { LOGO_URL } from "../utils/constant";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const [btnName, setBtnName] = useState("Login");
   const onClickBtn = () => {
     setBtnName(btnName === "Login" ? "Logout" : "Login");
   };
+  //subscribing to the store - read from the store
+  const cartItems = useSelector((store) => store.cart.items);
+
+  console.log(cartItems);
   return (
     <div className="flex justify-between bg-pink-100 shadow-lg">
       <div className="logo-container">
@@ -24,7 +29,7 @@ const Header = () => {
             <Link to="/contact">Contact Us</Link>
           </li>
           <li className="px-4">
-            <Link to="/cart">Cart</Link>
+            <Link to="/cart">Cart ({cartItems.length})</Link>
           </li>
         </ul>
         <button
