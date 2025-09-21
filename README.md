@@ -60,3 +60,6 @@ useEffect() --> re-rendering of components after effect
 5. Configure Parcel config file to disabled default babel configuration
 6. Jest Configuration -- using npx create-jest
 7. Install jsdom library
+8. Install  @babel/preset-react - to make jsx work in our testcases file
+9. Add  @babel/preset-react into babel config
+10. Install @testing-library/jest-dom
