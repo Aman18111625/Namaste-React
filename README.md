@@ -44,3 +44,19 @@ useEffect() --> re-rendering of components after effect
 5. Create an Action to dispatch
 6. Create Reducer Function
 7. Create Selector to read the data from store
+
+# Type of testing (developer pov)
+
+1. Unit Testing - testing of a component in isolation
+2. Integration Testing - testing of a parent component which is using child compoent (Complete testing of whole component)
+3. End to End Testing - Testing of whole web app ( user landing to till end)
+
+# Testin setup for our app
+
+1. Install React Testing Library
+2. Install Jest
+3. Install Babel Dependencies
+4. Config Babel
+5. Configure Parcel config file to disabled default babel configuration
+6. Jest Configuration -- using npx create-jest
+7. Install jsdom library
