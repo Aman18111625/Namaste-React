@@ -2,6 +2,7 @@ import { CLOUDINARY_IMAGE_URL } from "../utils/constant";
 
 const RestaurantCard = (props) => {
   // Destructuring props
+  console.log("**props", props.resData);
   const { name, cloudinaryImageId, costForTwo, cuisines, avgRating, sla } =
     props.resData || {};
   return (

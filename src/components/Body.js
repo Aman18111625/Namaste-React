@@ -1,6 +1,6 @@
 import RestaurantCard, {
   RestaurantCardWithPromotedLabel,
-} from "./RestaurentCard";
+} from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { NO_RESULT_IMAGE_URL } from "../utils/constant";

@@ -1,0 +1,74 @@
+{
+    "id": "385824",
+    "name": "The Belgian Waffle Co.",
+    "cloudinaryImageId": "RX_THUMBNAIL/IMAGES/VENDOR/2025/1/17/a38d20d7-bbb7-4b67-8bdd-7740e85cd4af_385824.JPG",
+    "locality": "Sinchai Colony",
+    "areaName": "Mohan Nagar",
+    "costForTwo": "₹200 for two",
+    "cuisines": [
+        "Waffle",
+        "Desserts",
+        "Ice Cream",
+        "Beverages"
+    ],
+    "avgRating": 4.7,
+    "veg": true,
+    "parentId": "2233",
+    "avgRatingString": "4.7",
+    "totalRatingsString": "312",
+    "sla": {
+        "deliveryTime": 50,
+        "lastMileTravel": 13.4,
+        "serviceability": "SERVICEABLE",
+        "slaString": "45-50 mins",
+        "lastMileTravelString": "13.4 km",
+        "iconType": "ICON_TYPE_EMPTY"
+    },
+    "availability": {
+        "nextCloseTime": "2025-06-12 22:45:00",
+        "opened": true
+    },
+    "badges": {
+        "imageBadges": [
+            {
+                "imageId": "v1695133679/badges/Pure_Veg111.png",
+                "description": "pureveg"
+            }
+        ]
+    },
+    "isOpen": true,
+    "aggregatedDiscountInfoV2": {},
+    "type": "F",
+    "badgesV2": {
+        "entityBadges": {
+            "imageBased": {
+                "badgeObject": [
+                    {
+                        "attributes": {
+                            "description": "pureveg",
+                            "imageId": "v1695133679/badges/Pure_Veg111.png"
+                        }
+                    }
+                ]
+            },
+            "textBased": {},
+            "textExtendedBadges": {}
+        }
+    },
+    "differentiatedUi": {
+        "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+        "differentiatedUiMediaDetails": {
+            "lottie": {},
+            "video": {}
+        }
+    },
+    "reviewsSummary": {},
+    "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+    "restaurantOfferPresentationInfo": {},
+    "externalRatings": {
+        "aggregatedRating": {
+            "rating": "--"
+        }
+    },
+    "ratingsDisplayPreference": "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY"
+}

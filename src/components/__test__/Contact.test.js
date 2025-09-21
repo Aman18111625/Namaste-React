@@ -3,12 +3,12 @@ import Contact from "../Contact";
 import "@testing-library/jest-dom";
 
 describe("Contact Component", () => {
-  test("should render Contact Us heading", () => {
+  it("should render Contact Us heading", () => {
     render(<Contact />);
     const headingElement = screen.getByText(/Contact Us/i);
     expect(headingElement).toBeInTheDocument();
   });
-  test("should render form with input fields and submit button", () => {
+  it("should render form with input fields and submit button", () => {
     render(<Contact />);
     const nameInput = screen.getByPlaceholderText(/Your Name/i);
     const emailInput = screen.getByPlaceholderText(/Your Email/i);
