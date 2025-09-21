@@ -11,13 +11,12 @@ const Header = () => {
   //subscribing to the store - read from the store
   const cartItems = useSelector((store) => store.cart.items);
 
-  console.log(cartItems);
   return (
     <div className="flex justify-between bg-pink-100 shadow-lg">
-      <div className="logo-container">
+      <div className="logo-container" data-testid="logo">
         <img src={LOGO_URL} alt="Logo" className="w-30" />
       </div>
-      <div className="flex items-center m-4">
+      <div className="flex items-center m-4" data-testid="nav-items">
         <ul className="flex p-4 m-4">
           <li className="px-4">
             <Link to="/">Home</Link>
@@ -35,6 +34,7 @@ const Header = () => {
         <button
           className=" text-blue-300 p-2 border border-blue-300 rounded hover:bg-blue-300 hover:text-white cursor-pointer"
           onClick={onClickBtn}
+          data-testid="login-btn"
         >
           {btnName}
         </button>

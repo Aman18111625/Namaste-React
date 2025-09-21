@@ -4,12 +4,10 @@ import ItemList from "./ItemList";
 
 const Cart = () => {
   const cartItems = useSelector((store) => store.cart.items);
-  console.log("**cartItems", cartItems);
   const dispatch = useDispatch();
 
   const handleClearItems = () => {
     dispatch(clearItems());
-    console.log("**cartItems", cartItems);
   }
   return (
     <div className="text-center m-4 p-4">
