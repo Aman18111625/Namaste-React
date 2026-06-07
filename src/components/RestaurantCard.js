@@ -12,6 +12,7 @@ const RestaurantCard = (props) => {
         className="rounded-lg"
       />
       <div>
+
         <p className="font-bold py-4 text-xl">{name}</p>
         <p>{cuisines?.join(", ")}</p>
         <p>{costForTwo}</p>
