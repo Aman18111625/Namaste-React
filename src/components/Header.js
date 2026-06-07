@@ -1,7 +1,9 @@
 import { useState } from "react";
-import { LOGO_URL } from "../utils/constant";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+const logo = new URL("../assets/Namma_Foods_Logo.png", import.meta.url).href;
+
+
 
 const Header = () => {
   const [btnName, setBtnName] = useState("Login");
@@ -13,8 +15,8 @@ const Header = () => {
 
   return (
     <div className="flex justify-between bg-pink-100 shadow-lg">
-      <div className="logo-container" data-testid="logo">
-        <img src={LOGO_URL} alt="Logo" className="w-30" />
+      <div className="logo-container flex items-center p-2" data-testid="logo">
+        <img src={logo} alt="Logo" className="w-27 h-27 rounded-full object-cover shadow-md" />
       </div>
       <div className="flex items-center m-4" data-testid="nav-items">
         <ul className="flex p-4 m-4">

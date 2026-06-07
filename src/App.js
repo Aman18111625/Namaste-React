@@ -17,7 +17,7 @@ import appStore from "./utils/appStore";
 const AppLayout = () => {
   return (
     <Provider store={appStore}>
-      <div className="app-layout">
+      <div className="app-layout pb-20">
         <Header />
         <Outlet />
         <Footer />

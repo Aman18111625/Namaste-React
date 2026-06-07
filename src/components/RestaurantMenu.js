@@ -18,9 +18,9 @@ const RestaurantMenu = () => {
         cd.card?.["card"]?.["@type"] ===
         "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
       );
-    });
+    }) || []; // fallback to [] so .map() never crashes
 
-  return menuData?.length === 0 || menuData === undefined ? (
+  return !menuData || menuData?.length === 0 ? (
     <Shimmer />
   ) : (
     <div className="text-center">

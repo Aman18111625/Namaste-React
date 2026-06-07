@@ -25,6 +25,24 @@ const Body = () => {
     setFilteredData(filteredRes);
   };
 
+  // Debouncing search: auto-trigger search after 5 seconds of typing inactivity
+  useEffect(() => {
+    // If search term is empty, immediately show all restaurants
+    if (searchTerm.trim() === "") {
+      setFilteredData(restData);
+      return;
+    }
+
+    const timer = setTimeout(() => {
+      const filteredRes = restData.filter((restaurant) =>
+        restaurant?.info?.name?.toLowerCase()?.includes(searchTerm?.toLowerCase())
+      );
+      setFilteredData(filteredRes);
+    }, 5000); // 5 seconds debounce
+
+    return () => clearTimeout(timer);
+  }, [searchTerm]); // only re-run when searchTerm changes
+
   useEffect(() => {
     fetchData();
   }, []);
