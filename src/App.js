@@ -17,9 +17,11 @@ import appStore from "./utils/appStore";
 const AppLayout = () => {
   return (
     <Provider store={appStore}>
-      <div className="app-layout pb-20">
+      <div className="app-layout min-h-screen flex flex-col">
         <Header />
-        <Outlet />
+        <main className="flex-grow">
+          <Outlet />
+        </main>
         <Footer />
       </div>
     </Provider>

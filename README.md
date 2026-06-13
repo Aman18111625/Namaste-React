@@ -1,4 +1,4 @@
-# Namaste-React-Learning
+# Namma-foods-Learning
 
 1. Emmit : It's basically generate some code for us in vs code.
 2. appendChild() : it's a method that is available on every HTML node.

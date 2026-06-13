@@ -25,21 +25,24 @@ const ItemList = ({ items }) => {
               {item?.card?.info?.description}
             </p>
           </div>
-          {item?.card?.info?.imageId && (
-            <div className="w-3/12 p-4">
-              <div className="absolute">
+          {(item?.card?.info?.imageId || item?.card?.info?.imageUrl) && (
+            <div className="relative w-3/12 p-4 flex flex-col items-center">
+              <img
+                src={
+                  item?.card?.info?.imageUrl ||
+                  CLOUDINARY_IMAGE_URL + item?.card?.info?.imageId
+                }
+                alt={item?.card?.info?.name}
+                className="w-24 h-24 object-cover rounded-lg"
+              />
+              <div className="absolute bottom-2 z-10">
                 <button
-                  className="bg-black border border-gray-400 px-2 py-1 rounded-lg text-white"
+                  className="bg-black border border-gray-400 px-4 py-1 rounded-lg text-white cursor-pointer hover:bg-gray-800 text-xs shadow-md"
                   onClick={() => handleAddItem(item)}
                 >
                   Add +
                 </button>
               </div>
-              <img
-                src={CLOUDINARY_IMAGE_URL + item?.card?.info?.imageId}
-                alt={item?.card?.info?.name}
-                className="w-25 h-auto rounded-lg"
-              />
             </div>
           )}
         </div>
